@@ -1,5 +1,5 @@
 'use strict';
 
 exports.index = (req, res)=>{
-  res.render('game/index', {title: 'Builder 2'});
+  res.render('game/index', {title: 'Age of Empires'});
 };
