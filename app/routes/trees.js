@@ -24,9 +24,7 @@ exports.chop = (req, res)=>{
     User.findByUserId(req.params.userId, user=>{
       tree.chop(user);
       tree.save(()=>{
-        user.save(()=>{
-          tree.save(()=>res.render('trees/tree', {tree:tree}));
-        });
+        user.save(()=>res.render('trees/tree', {tree:tree}));
       });
     });
   });
