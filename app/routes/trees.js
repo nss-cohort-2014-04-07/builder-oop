@@ -29,3 +29,7 @@ exports.chop = (req, res)=>{
     });
   });
 };
+
+exports.root = (req, res)=>{
+  Tree.removeAllDeadTreesByUserId(req.params.userId, ()=>res.send({}));
+};

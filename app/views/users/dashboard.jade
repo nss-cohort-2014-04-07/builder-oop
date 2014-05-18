@@ -1,8 +1,16 @@
 #overview
   #user(data-id=user._id.toString()) User: #{user.username}
-  #wood Wood: #{user.wood}
-  #cash Cash: $#{user.cash}
+  #wood Wood: #{parseInt(user.wood)}
+  #cash Cash: $#{parseInt(user.cash)}
 button#plant Plant Seed
 button#getforest Get Forest
 button#sell-wood Sell Wood
 input#wood-amt(type='text', placeholder='Wood Amt')
+if(user.isAutoGrowAvailable)
+  button#purchase-autogrow AutoGrow
+if(user.isAutoSeedAvailable)
+  button#purchase-autoseed AutoSeed
+if(user.isAutoRootAvailable)
+  button#purchase-autoroot AutoRoot
+if(user.isCastleAvailable)
+  button#purchase-castle Castle

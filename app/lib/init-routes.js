@@ -27,11 +27,14 @@ function load(app, fn){
   app.post('/login', dbg, users.login);
   app.get('/users/:userId', dbg, users.dashboard);
   app.put('/users/:userId/sellwood', dbg, users.sellWood);
+  app.put('/users/:userId/purchase/:item', dbg, users.purchase);
+  app.get('/users/:userId/items', dbg, users.items);
 
   app.post('/trees/plant', dbg, trees.plant);
   app.get('/trees', dbg, trees.forest);
   app.put('/trees/:treeId/grow', dbg, trees.grow);
   app.put('/trees/:treeId/chop/:userId', dbg, trees.chop);
+  app.del('/trees/:userId/root', dbg, trees.root);
 
   console.log('Routes Loaded');
   fn();
